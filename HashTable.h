@@ -1,3 +1,8 @@
+#include <iostream>
+using std::string;
+using std::endl;
+using std::cout;
+
 class HashTable {
 public:
 
@@ -19,7 +24,7 @@ public:
 
 	// Overloaded assignment operator
 		// returns reference to the calling object
-	HashTable operator=(const HashTable & hash);
+	HashTable &operator=(const HashTable &hash);
 
 	// insert
 		// searches hash table for the method's string param
@@ -47,8 +52,13 @@ public:
 	int loadFactor();
 
 private:
-	string* strObjects;	// refer to underlying array of string objects
+	string* stringArr;	// refer to underlying array of string objects
 	int arrSize;	// size of underlying array
 	int h2Value;	// value used by h2
 	int numItems;	// current number of times in hash table
+
+	// Function to find 
+	bool boolNumFinder();
+	// Helper copy function
+	void copyArr(const HashTable& arr);
 }; 
