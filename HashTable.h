@@ -1,4 +1,6 @@
+#pragma once
 #include <iostream>
+#include <algorithm>
 using std::string;
 using std::endl;
 using std::cout;
@@ -17,14 +19,14 @@ public:
 	HashTable(int n);
 
 	// Copy constructor
-	HashTable(const HashTable & hash);
+	HashTable(const HashTable& hash);
 
 	// Destructor
 	~HashTable();
 
 	// Overloaded assignment operator
 		// returns reference to the calling object
-	HashTable &operator=(const HashTable &hash);
+	HashTable& operator=(const HashTable& hash);
 
 	// insert
 		// searches hash table for the method's string param
@@ -49,7 +51,9 @@ public:
 
 	// loadFactor
 		// returns the load factor of the hash table
-	int loadFactor();
+	float loadFactor();
+
+	int strToInt(string str);
 
 private:
 	string* stringArr;	// refer to underlying array of string objects
@@ -61,4 +65,6 @@ private:
 	bool boolNumFinder();
 	// Helper copy function
 	void copyArr(const HashTable& arr);
-}; 
+	// String to int function
+	
+};
